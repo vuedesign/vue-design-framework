@@ -1,0 +1,22 @@
+{
+  "name": "@vue-design/theme-2n-demands",
+  "version": "0.0.1",
+  "description": "Element component 2n theme.",
+  "keywords": [
+    "element-plus",
+    "theme-2n"
+  ],
+  "homepage": "https://github.com/vuedesign/vue-design-framework/blob/dev/packages/theme-2n-demands/README.md",
+  "bugs": {
+    "url": "https://github.com/vuedesign/vue-design-framework#issues"
+  },
+  "files": [
+    "*"
+  ],
+  "license": "MIT",
+  "author": "n.see <gooarter@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuedesign/vue-design-framework.git"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "vue-design-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vuedesign/vue-design-framework.git",
+  "author": "n.see <gooarter@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@vue-design/theme-2n": "workspace:*"
+  }
+}

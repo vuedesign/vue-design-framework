@@ -1,2 +1,3 @@
 import "@vue-design/theme-2n/src/base.scss";
 import "@vue-design/theme-2n/src/drawer.scss";
+import "@vue-design/theme-2n/src/overlay.scss";

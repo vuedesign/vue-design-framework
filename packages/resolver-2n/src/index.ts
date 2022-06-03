@@ -78,7 +78,6 @@ function getSideEffects(
   const { importStyle, ssr } = options;
   const themeFolder = "@vue-design/theme-2n";
   const esComponentsFolder = "@vue-design/theme-2n-demands";
-
   if (importStyle === "sass")
     return ssr
       ? `${themeFolder}/src/${dirName}.scss`
@@ -96,7 +95,6 @@ function resolveComponent(
   if (options.exclude && name.match(options.exclude)) return;
 
   if (!name.match(/^El[A-Z]/)) return;
-
   const partialName = kebabCase(name.slice(2)); // ElTableColumn -> table-column
   const { version, ssr } = options;
   // >=2.2.2

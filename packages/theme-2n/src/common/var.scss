@@ -153,6 +153,7 @@ $border-radius: map.merge(
   (
     "base": 4px,
     "small": 2px,
+    "medium": 8px,
     "round": 20px,
     "circle": 100%,
   ),
@@ -736,8 +737,8 @@ $dialog: map.merge(
     "title-font-size": getCssVar("font-size-large"),
     "content-font-size": 14px,
     "font-line-height": getCssVar("font-line-height-primary"),
-    "padding-primary": 20px,
-    "border-radius": getCssVar("border-radius-small"),
+    "padding-primary": 24px,
+    "border-radius": getCssVar("border-radius-medium"),
   ),
   $dialog
 );

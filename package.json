@@ -10,6 +10,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@vue-design/theme-2n": "workspace:*"
+    "@vue-design/theme-2n": "workspace:*",
+    "@vue-design/theme-2n-demands": "workspace:*",
+    "@vue-design/resolver-2n": "workspace:*"
   }
 }

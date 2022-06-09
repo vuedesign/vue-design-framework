@@ -10,7 +10,7 @@ $radio-font-size: () !default;
 $radio-font-size: map.merge(
   (
     'large': 14px,
-    'small': 12px,
+    'small': 12px
   ),
   $radio-font-size
 );

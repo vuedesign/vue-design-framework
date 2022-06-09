@@ -1,6 +1,6 @@
 {
   "name": "vue-design-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:vuedesign/vue-design-framework.git",
   "author": "n.see <gooarter@gmail.com>",
@@ -9,9 +9,29 @@
   ],
   "license": "MIT",
   "private": true,
+  "packageManager": "pnpm@7.1.9",
+  "scripts": {
+    "format": "prettier --write --parser typescript \"packages/**/*.ts?(x)\""
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --parser=typescript --write"
+    ]
+  },
   "dependencies": {
+    "@vue-design/core": "workspace:*",
     "@vue-design/theme-2n": "workspace:*",
     "@vue-design/theme-2n-demands": "workspace:*",
     "@vue-design/resolver-2n": "workspace:*"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }

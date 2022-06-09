@@ -1,8 +1,8 @@
-@use "mixins/mixins" as *;
-@use "common/var" as *;
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
 
 @include b(overlay) {
-  #{& + "-root"} {
+  #{& + '-root'} {
     height: 0;
   }
   position: fixed;
@@ -12,6 +12,6 @@
   left: 0;
   z-index: 2000;
   height: 100%;
-  background-color: getCssVar("overlay-color", "lighter");
+  background-color: getCssVar('overlay-color', 'lighter');
   overflow: auto;
 }

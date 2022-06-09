@@ -1,1 +1,1 @@
-export const HttpKey = Symbol('http');
+export const HttpKey = Symbol('http')

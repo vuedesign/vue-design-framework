@@ -68,7 +68,7 @@
     'top': 'bottom',
     'bottom': 'top',
     'left': 'right',
-    'right': 'left',
+    'right': 'left'
   );
 
   @each $placement, $opposite in $placements {

@@ -1,11 +1,11 @@
-import { App, inject } from "vue";
-import axios, { AxiosRequestConfig, AxiosInstance } from "axios";
-import { HttpKey } from "./keys";
-import interceptors from "./interceptors";
+import { App, inject } from 'vue'
+import axios, { AxiosRequestConfig, AxiosInstance } from 'axios'
+import { HttpKey } from './keys'
+import interceptors from './interceptors'
 
 export interface Http extends AxiosInstance {
-  setAuthorization(authorization: string): void;
-  install(app: App): void;
+  setAuthorization(authorization: string): void
+  install(app: App): void
 }
 
 /**
@@ -13,71 +13,71 @@ export interface Http extends AxiosInstance {
  * @param config
  */
 function injectionTimestamp(config: AxiosRequestConfig) {
-  const timestamp = new Date().getTime();
-  const { params = {} } = config;
+  const timestamp = new Date().getTime()
+  const { params = {} } = config
   Object.assign(params, {
-    timestamp,
-  });
+    timestamp
+  })
 }
 
 export interface CreateHttpOptions {
   // interceptors: Interceptors;
-  baseURL?: string;
+  baseURL?: string
 }
 
 export function useHttp(): Http {
-  const http = inject(HttpKey) || axios;
-  return http as Http;
+  const http = inject(HttpKey) || axios
+  return http as Http
 }
 export function createHttp({
   // interceptors,
-  baseURL,
+  baseURL
 }: CreateHttpOptions): Http {
   const instance = axios.create({
-    baseURL: baseURL || "",
-  }) as Http;
+    baseURL: baseURL || ''
+  }) as Http
 
   instance.interceptors.request.use(
     (config: AxiosRequestConfig) => {
       // 在 interceptors.js 关闭时间戳注入
       // export const isTimestampDisabled = false;
       if (!interceptors.isTimestampDisabled) {
-        injectionTimestamp(config);
+        injectionTimestamp(config)
       }
       if (interceptors.httpRequestSuccess) {
-        return interceptors.httpRequestSuccess(config);
+        return interceptors.httpRequestSuccess(config)
       }
-      return config;
+      return config
     },
-    (error) => {
+    error => {
       if (interceptors.httpRequestFailure) {
-        return interceptors.httpRequestFailure(error);
+        return interceptors.httpRequestFailure(error)
       }
-      return Promise.reject(error);
+      return Promise.reject(error)
     }
-  );
+  )
   instance.interceptors.response.use(
-    (response) => {
+    response => {
       if (interceptors.httpResponseSuccess) {
-        return interceptors.httpResponseSuccess(response.data);
+        return interceptors.httpResponseSuccess(response.data)
       }
-      return response.data;
+      return response.data
     },
-    (error) => {
+    error => {
       if (interceptors.httpResponseFailure) {
-        return interceptors.httpResponseFailure(error);
+        return interceptors.httpResponseFailure(error)
       }
-      return Promise.reject(error);
+      return Promise.reject(error)
     }
-  );
+  )
   instance.setAuthorization = (authorization: string) => {
-    instance.defaults.headers.common["Authorization"] = authorization;
-  };
+    instance.defaults.headers.common['Authorization'] = authorization
+  }
   instance.install = (app: App) => {
-    app.config.globalProperties.$http = instance;
-    app.provide(HttpKey, instance);
-  };
-  return instance;
+    app.config.globalProperties.$http = instance
+    app.provide(HttpKey, instance)
+  }
+  return instance
 }
 
-export { HttpKey };
+export { HttpKey }

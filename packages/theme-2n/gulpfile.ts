@@ -1,22 +1,22 @@
-import path from "path";
-import chalk from "chalk";
-import { resolve } from "path";
-import { dest, parallel, series, src } from "gulp";
-import gulpSass from "gulp-sass";
-import dartSass from "sass";
-import autoprefixer from "gulp-autoprefixer";
-import cleanCSS from "gulp-clean-css";
-import rename from "gulp-rename";
-import consola from "consola";
+import path from 'path'
+import chalk from 'chalk'
+import { resolve } from 'path'
+import { dest, parallel, series, src } from 'gulp'
+import gulpSass from 'gulp-sass'
+import dartSass from 'sass'
+import autoprefixer from 'gulp-autoprefixer'
+import cleanCSS from 'gulp-clean-css'
+import rename from 'gulp-rename'
+import consola from 'consola'
 
-export const projRoot = resolve(__dirname, "..", "..", "..");
-export const buildOutput = resolve(projRoot, "dist");
-export const epOutput = resolve(buildOutput, "element-plus");
+export const projRoot = resolve(__dirname, '..', '..', '..')
+export const buildOutput = resolve(projRoot, 'dist')
+export const epOutput = resolve(buildOutput, 'element-plus')
 
-consola.log("epOutput", epOutput);
+consola.log('epOutput', epOutput)
 
-const distFolder = path.resolve(__dirname, "dist");
-const distBundle = path.resolve(epOutput, "theme-2n");
+const distFolder = path.resolve(__dirname, 'dist')
+const distBundle = path.resolve(epOutput, 'theme-2n')
 
 /**
  * compile theme-chalk scss & minify
@@ -24,28 +24,28 @@ const distBundle = path.resolve(epOutput, "theme-2n");
  * @returns
  */
 function buildThemeChalk() {
-  const sass = gulpSass(dartSass);
-  const noElPrefixFile = /(index|base|display)/;
-  return src(path.resolve(__dirname, "src/*.scss"))
+  const sass = gulpSass(dartSass)
+  const noElPrefixFile = /(index|base|display)/
+  return src(path.resolve(__dirname, 'src/*.scss'))
     .pipe(sass.sync())
     .pipe(autoprefixer({ cascade: false }))
     .pipe(
-      cleanCSS({}, (details) => {
+      cleanCSS({}, details => {
         consola.success(
           `${chalk.cyan(details.name)}: ${chalk.yellow(
             details.stats.originalSize / 1000
           )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
-        );
+        )
       })
     )
     .pipe(
-      rename((path) => {
+      rename(path => {
         if (!noElPrefixFile.test(path.basename)) {
-          path.basename = `el-${path.basename}`;
+          path.basename = `el-${path.basename}`
         }
       })
     )
-    .pipe(dest(distFolder));
+    .pipe(dest(distFolder))
 }
 
 /**
@@ -53,27 +53,27 @@ function buildThemeChalk() {
  * @returns
  */
 function buildDarkCssVars() {
-  const sass = gulpSass(dartSass);
-  return src(path.resolve(__dirname, "src/dark/css-vars.scss"))
+  const sass = gulpSass(dartSass)
+  return src(path.resolve(__dirname, 'src/dark/css-vars.scss'))
     .pipe(sass.sync())
     .pipe(autoprefixer({ cascade: false }))
     .pipe(
-      cleanCSS({}, (details) => {
+      cleanCSS({}, details => {
         consola.success(
           `${chalk.cyan(details.name)}: ${chalk.yellow(
             details.stats.originalSize / 1000
           )} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`
-        );
+        )
       })
     )
-    .pipe(dest(`${distFolder}/dark`));
+    .pipe(dest(`${distFolder}/dark`))
 }
 
 /**
  * copy from packages/theme-chalk/dist to dist/element-plus/theme-chalk
  */
 export function copyThemeChalkBundle() {
-  return src(`${distFolder}/**`).pipe(dest(distBundle));
+  return src(`${distFolder}/**`).pipe(dest(distBundle))
 }
 
 /**
@@ -81,15 +81,15 @@ export function copyThemeChalkBundle() {
  */
 
 export function copyThemeChalkSource() {
-  return src(path.resolve(__dirname, "src/**")).pipe(
-    dest(path.resolve(distBundle, "src"))
-  );
+  return src(path.resolve(__dirname, 'src/**')).pipe(
+    dest(path.resolve(distBundle, 'src'))
+  )
 }
 
 export const build = parallel(
   copyThemeChalkSource,
   //   series(buildThemeChalk, buildDarkCssVars)
   series(buildThemeChalk, buildDarkCssVars, copyThemeChalkBundle)
-);
+)
 
-export default build;
+export default build

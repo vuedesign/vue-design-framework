@@ -9,7 +9,7 @@ $descriptions-header-margin-bottom: map.merge(
   (
     'large': 20px,
     'default': 16px,
-    'small': 12px,
+    'small': 12px
   ),
   $descriptions-header-margin-bottom
 );
@@ -19,7 +19,7 @@ $descriptions-title-font-size: map.merge(
   (
     'large': 16px,
     'default': 16px,
-    'small': 14px,
+    'small': 14px
   ),
   $descriptions-title-font-size
 );
@@ -29,7 +29,7 @@ $descriptions-cell-padding-bottom: map.merge(
   (
     'large': 16px,
     'default': 12px,
-    'small': 8px,
+    'small': 8px
   ),
   $descriptions-cell-padding-bottom
 );
@@ -39,7 +39,7 @@ $descriptions-bordered-cell-padding: map.merge(
   (
     'large': 12px 15px,
     'default': 8px 11px,
-    'small': 4px 7px,
+    'small': 4px 7px
   ),
   $descriptions-bordered-cell-padding
 );
@@ -49,7 +49,7 @@ $descriptions-cell-font-size: map.merge(
   (
     'large': 14px,
     'default': 14px,
-    'small': 12px,
+    'small': 12px
   ),
   $descriptions-cell-font-size
 );

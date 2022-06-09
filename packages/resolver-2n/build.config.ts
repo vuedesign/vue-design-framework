@@ -1,10 +1,10 @@
-import { defineBuildConfig } from "unbuild";
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   declaration: true,
-  entries: ["./src/index"],
+  entries: ['./src/index'],
   rollup: {
-    emitCJS: true,
+    emitCJS: true
   },
-  dependencies: ["compare-versions", "@antfu/utils", "local-pkg"],
-});
+  dependencies: ['compare-versions', '@antfu/utils', 'local-pkg']
+})

@@ -10,8 +10,8 @@ $colors: () !default;
   $colors: map.deep-merge(
     (
       $type: (
-        'base': map.get(common.$colors, $type, 'base'),
-      ),
+        'base': map.get(common.$colors, $type, 'base')
+      )
     ),
     $colors
   ) !global;
@@ -34,8 +34,8 @@ $colors: () !default;
             $mix-color,
             map.get($colors, $type, 'base'),
             math.percentage(math.div($number, 10))
-          ),
-      ),
+          )
+      )
     ),
     $colors
   ) !global;
@@ -58,7 +58,7 @@ $bg-color: map.merge(
   (
     'page': #0a0a0a,
     '': #141414,
-    'overlay': #1d1e1f,
+    'overlay': #1d1e1f
   ),
   $bg-color
 );
@@ -83,7 +83,7 @@ $border-color: map.merge(
     '': rgba($border-color-base, 0.25),
     'light': rgba($border-color-base, 0.2),
     'lighter': rgba($border-color-base, 0.15),
-    'extra-light': rgba($border-color-base, 0.1),
+    'extra-light': rgba($border-color-base, 0.1)
   ),
   $border-color
 );
@@ -93,7 +93,7 @@ $border-color: map.merge(
   $border-color: map.merge(
     $border-color,
     (
-      $key: mix-overlay-color($val, map.get($bg-color, '')),
+      $key: mix-overlay-color($val, map.get($bg-color, ''))
     )
   ) !global;
 }
@@ -104,19 +104,19 @@ $box-shadow: map.merge(
   (
     '': (
       0px 12px 32px 4px rgba(0, 0, 0, 0.36),
-      0px 8px 20px rgba(0, 0, 0, 0.72),
+      0px 8px 20px rgba(0, 0, 0, 0.72)
     ),
     'light': (
-      0px 0px 12px rgba(0, 0, 0, 0.72),
+      0px 0px 12px rgba(0, 0, 0, 0.72)
     ),
     'lighter': (
-      0px 0px 6px rgba(0, 0, 0, 0.72),
+      0px 0px 6px rgba(0, 0, 0, 0.72)
     ),
     'dark': (
       0px 16px 48px 16px rgba(0, 0, 0, 0.72),
       0px 12px 32px #000000,
-      0px 8px 16px -8px #000000,
-    ),
+      0px 8px 16px -8px #000000
+    )
   ),
   $box-shadow
 );
@@ -132,7 +132,7 @@ $fill-color: map.merge(
     'light': rgba($fill-color-base, 0.08),
     'lighter': rgba($fill-color-base, 0.04),
     'extra-light': rgba($fill-color-base, 0.02),
-    'blank': transparent,
+    'blank': transparent
   ),
   $fill-color
 );
@@ -143,7 +143,7 @@ $fill-color: map.merge(
     $fill-color: map.merge(
       $fill-color,
       (
-        $key: mix-overlay-color($val, map.get($bg-color, '')),
+        $key: mix-overlay-color($val, map.get($bg-color, ''))
       )
     ) !global;
   }
@@ -158,7 +158,7 @@ $text-color: map.merge(
     'regular': rgba($text-color-base, 0.85),
     'secondary': rgba($text-color-base, 0.65),
     'placeholder': rgba($text-color-base, 0.55),
-    'disabled': rgba($text-color-base, 0.4),
+    'disabled': rgba($text-color-base, 0.4)
   ),
   $text-color
 );
@@ -167,7 +167,7 @@ $text-color: map.merge(
   $text-color: map.merge(
     $text-color,
     (
-      $key: mix-overlay-color($val, map.get($bg-color, '')),
+      $key: mix-overlay-color($val, map.get($bg-color, ''))
     )
   ) !global;
 }
@@ -177,7 +177,7 @@ $mask-color: () !default;
 $mask-color: map.merge(
   (
     '': rgba(0, 0, 0, 0.8),
-    'extra-light': rgba(0, 0, 0, 0.3),
+    'extra-light': rgba(0, 0, 0, 0.3)
   ),
   $mask-color
 );
@@ -187,7 +187,7 @@ $mask-color: map.merge(
 $button: () !default;
 $button: map.merge(
   (
-    'disabled-text-color': rgba(255, 255, 255, 0.5),
+    'disabled-text-color': rgba(255, 255, 255, 0.5)
   ),
   $button
 );
@@ -196,7 +196,7 @@ $button: map.merge(
 $card: () !default;
 $card: map.merge(
   (
-    'bg-color': getCssVar('bg-color', 'overlay'),
+    'bg-color': getCssVar('bg-color', 'overlay')
   ),
   $card
 );
@@ -215,7 +215,7 @@ $empty: map.merge(
     'fill-color-6': #212224,
     'fill-color-7': #1b1c1f,
     'fill-color-8': #1c1d1f,
-    'fill-color-9': #18181a,
+    'fill-color-9': #18181a
   ),
   $empty
 );

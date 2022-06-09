@@ -1,24 +1,24 @@
-import { getPackageInfo, isPackageExists } from "local-pkg";
+import { getPackageInfo, isPackageExists } from 'local-pkg'
 
 export async function getPkgVersion(
   pkgName: string,
   defaultVersion: string
 ): Promise<string> {
   try {
-    const isExist = isPackageExists(pkgName);
+    const isExist = isPackageExists(pkgName)
     if (isExist) {
-      const pkg = await getPackageInfo(pkgName);
-      return pkg?.version ?? defaultVersion;
+      const pkg = await getPackageInfo(pkgName)
+      return pkg?.version ?? defaultVersion
     } else {
-      return defaultVersion;
+      return defaultVersion
     }
   } catch (err) {
-    console.error(err);
-    return defaultVersion;
+    console.error(err)
+    return defaultVersion
   }
 }
 
 export function kebabCase(key: string) {
-  const result = key.replace(/([A-Z])/g, " $1").trim();
-  return result.split(" ").join("-").toLowerCase();
+  const result = key.replace(/([A-Z])/g, ' $1').trim()
+  return result.split(' ').join('-').toLowerCase()
 }

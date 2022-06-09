@@ -1,2 +1,2 @@
-import "@vue-design/theme-2n/dist/base.css";
-import "@vue-design/theme-2n/dist/badge.css";
+import '@vue-design/theme-2n/dist/base.css'
+import '@vue-design/theme-2n/dist/badge.css'

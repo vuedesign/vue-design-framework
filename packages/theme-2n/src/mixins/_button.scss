@@ -9,39 +9,39 @@
     '': (
       'text-color': (
         'color',
-        $type,
+        $type
       ),
       'bg-color': (
         'color',
         $type,
-        'light-9',
+        'light-9'
       ),
       'border-color': (
         'color',
         $type,
-        'light-5',
-      ),
+        'light-5'
+      )
     ),
     'hover': (
       'text-color': (
         'color',
-        'white',
+        'white'
       ),
       'bg-color': (
         'color',
-        $type,
+        $type
       ),
       'border-color': (
         'color',
-        $type,
-      ),
+        $type
+      )
     ),
     'active': (
       'text-color': (
         'color',
-        'white',
-      ),
-    ),
+        'white'
+      )
+    )
   );
 
   @each $type, $typeMap in $button-color-types {
@@ -67,66 +67,66 @@
     '': (
       'text-color': (
         'color',
-        'white',
+        'white'
       ),
       'bg-color': (
         'color',
-        $type,
+        $type
       ),
       'border-color': (
         'color',
-        $type,
-      ),
+        $type
+      )
     ),
     'hover': (
       'text-color': (
         'color',
-        'white',
+        'white'
       ),
       'link-text-color': (
         'color',
         $type,
-        'light-5',
+        'light-5'
       ),
       'bg-color': (
         'color',
         $type,
-        'light-3',
+        'light-3'
       ),
       'border-color': (
         'color',
         $type,
-        'light-3',
-      ),
+        'light-3'
+      )
     ),
     'active': (
       'bg-color': (
         'color',
         $type,
-        'dark-2',
+        'dark-2'
       ),
       'border-color': (
         'color',
         $type,
-        'dark-2',
-      ),
+        'dark-2'
+      )
     ),
     'disabled': (
       'text-color': (
         'color',
-        'white',
+        'white'
       ),
       'bg-color': (
         'color',
         $type,
-        'light-5',
+        'light-5'
       ),
       'border-color': (
         'color',
         $type,
-        'light-5',
-      ),
-    ),
+        'light-5'
+      )
+    )
   );
 
   @each $type, $typeMap in $button-color-types {

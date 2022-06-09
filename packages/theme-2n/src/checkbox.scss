@@ -14,7 +14,7 @@ $checkbox-bordered-input-height: map.merge(
   (
     'large': 14px,
     'default': 12px,
-    'small': 12px,
+    'small': 12px
   ),
   $checkbox-bordered-input-height
 );
@@ -23,7 +23,7 @@ $checkbox-font-size: () !default;
 $checkbox-font-size: map.merge(
   (
     'large': 14px,
-    'small': 12px,
+    'small': 12px
   ),
   $checkbox-font-size
 );

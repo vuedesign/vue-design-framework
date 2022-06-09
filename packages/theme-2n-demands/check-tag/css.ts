@@ -1,2 +1,2 @@
-import "@vue-design/theme-2n/dist/base.css";
-import "@vue-design/theme-2n/dist/check-tag.css";
+import '@vue-design/theme-2n/dist/base.css'
+import '@vue-design/theme-2n/dist/check-tag.css'

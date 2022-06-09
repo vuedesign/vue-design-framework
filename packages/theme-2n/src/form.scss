@@ -10,7 +10,7 @@ $form-item-margin-bottom: map.merge(
   (
     'large': 22px,
     'default': 18px,
-    'small': 18px,
+    'small': 18px
   ),
   $form-item-margin-bottom
 );
@@ -20,7 +20,7 @@ $form-item-line-height: map.merge(
   (
     'large': 40px,
     'default': 32px,
-    'small': 24px,
+    'small': 24px
   ),
   $form-item-line-height
 );
@@ -30,7 +30,7 @@ $form-item-error-padding-top: map.merge(
   (
     'large': 4px,
     'default': 2px,
-    'small': 2px,
+    'small': 2px
   ),
   $form-item-error-padding-top
 );
@@ -40,7 +40,7 @@ $form-item-label-top-line-height: map.merge(
   (
     'large': 22px,
     'default': 22px,
-    'small': 20px,
+    'small': 20px
   ),
   $form-item-label-top-line-height
 );
@@ -50,7 +50,7 @@ $form-item-label-top-margin-bottom: map.merge(
   (
     'large': 12px,
     'default': 8px,
-    'small': 4px,
+    'small': 4px
   ),
   $form-item-label-top-margin-bottom
 );

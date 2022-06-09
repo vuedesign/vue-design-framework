@@ -1,5 +1,6 @@
 {
   "name": "@vue-design/theme-2n",
+  "private": true,
   "version": "0.0.1",
   "description": "Element component 2n theme.",
   "keywords": [

@@ -1,2 +1,2 @@
-import "@vue-design/theme-2n/src/base.scss";
-import "@vue-design/theme-2n/src/timeline.scss";
+import '@vue-design/theme-2n/src/base.scss'
+import '@vue-design/theme-2n/src/timeline.scss'

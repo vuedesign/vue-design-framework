@@ -1,2 +1,2 @@
-import "@vue-design/theme-2n/dist/base.css";
-import "@vue-design/theme-2n/dist/dropdown-item.css";
+import '@vue-design/theme-2n/dist/base.css'
+import '@vue-design/theme-2n/dist/dropdown-item.css'

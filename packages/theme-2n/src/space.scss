@@ -8,6 +8,9 @@
   @include e(item) {
     display: flex;
     flex-wrap: wrap;
+    &:last-child {
+      margin-right: 0 !important;
+    }
 
     & > * {
       flex: 1;

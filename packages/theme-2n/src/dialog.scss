@@ -90,7 +90,7 @@
   }
 
   @include e(body) {
-    padding: 0 getCssVar('dialog-padding-primary');
+    padding: 0;
     color: getCssVar('text-color', 'regular');
     font-size: getCssVar('dialog-content-font-size');
     word-break: break-all;
